@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>Kansas City Public Library</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  
+</head>
+
+<body>
+
+<img src=
+"../static/download.png"
+         alt="zomato image", width="150", height="150", style="float:left">
+
+         <h1> Kansas City Public Library</h1>
+         <h4>Bookmoblie Services Team</h4>
+
+<!-- <style>
+body {
+  
+  background-image: url("../static/bookmobile3.jpg");
+  background-position: 100%;
+  background-size: cover;
+  
+}
+</style> -->
+
+
+<h1>Bookmoblie Stops API</h1>
+
+<br>
+</br>
+ <div class="login">
+	<h3>Please Enter Address</h3>
+
+     <!-- Main Input For Receiving Query to our ML -->
+
+    
+
+    <form action="{{ url_for('get_loc')}}"method="post">
+      
+      <input type="text" name="Patron Address" placeholder="14 W 10th St, Kansas City, MO 64105" required="required" />
+      
+        <button type="submit" class="btn btn-primary btn-block btn-large">Lookup Adrress</button>
+    </form>
+
+   <br>
+   <br>
+   {{ prediction_text }}
+
+ </div>
+ 
+</body>
+</html>
